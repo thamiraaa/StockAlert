@@ -1,0 +1,81 @@
+### =====================================================
+### PRODUCT CRUD
+### =====================================================
+
+
+### Create Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Rice 5kg",
+  "price": 650,
+  "reorderThreshold": 10,
+  "reorderQuantity": 50
+}
+
+
+### Get All Products
+GET http://localhost:8080/api/products
+
+
+### Get Product By ID
+GET http://localhost:8080/api/products/1
+
+
+### Update Product
+PUT http://localhost:8080/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Rice 5kg Premium",
+  "price": 700,
+  "reorderThreshold": 15,
+  "reorderQuantity": 60
+}
+
+
+### Delete Product
+DELETE http://localhost:8080/api/products/1
+
+
+
+### =====================================================
+### STOCK MOVEMENT
+### =====================================================
+
+
+### Create Stock IN - Purchase
+POST http://localhost:8080/api/stock-movements/product/1
+Content-Type: application/json
+
+{
+  "quantity": 50,
+  "movementType": "IN",
+  "reason": "PURCHASE"
+}
+
+
+### Create Stock OUT - Sale
+POST http://localhost:8080/api/stock-movements/product/1
+Content-Type: application/json
+
+{
+  "quantity": 45,
+  "movementType": "OUT",
+  "reason": "SALE"
+}
+
+
+### Get All Stock Movements
+GET http://localhost:8080/api/stock-movements
+
+
+### Get Stock Movements By Product
+GET http://localhost:8080/api/stock-movements/product/1
+
+### =====================================================
+### DASHBOARD
+### =====================================================
+
+GET http://localhost:8080/api/dashboard
